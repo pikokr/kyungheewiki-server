@@ -5,6 +5,7 @@ import mongoose from 'mongoose'
 
 import { logger } from './logger'
 import './models'
+import { routes } from './routes'
 
 process.on('unhandledRejection', (err) => {
   logger.fatal('Unhandled rejection', err)
@@ -15,6 +16,8 @@ process.on('uncaughtException', (err) => {
 })
 
 const server = fastify()
+
+server.register(routes)
 
 setImmediate(async () => {
   await mongoose.connect(process.env.DB_DSN!)
