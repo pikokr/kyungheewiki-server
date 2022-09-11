@@ -1,4 +1,6 @@
-import mongoose, { trusted } from 'mongoose'
+import mongoose, { InferSchemaType, Model } from 'mongoose'
+
+import { APIClass, IClassMethods } from './Class'
 
 export interface IUser {
   name: string // 이름
@@ -10,7 +12,19 @@ export interface IUser {
   admin: boolean // 관리자 여부
 }
 
-const schema = new mongoose.Schema<IUser>({
+export interface APIUser {
+  id: string
+  name: string
+  email: string
+  class: APIClass
+  classNum: number
+}
+
+export interface IUserMethods {
+  toAPIUser(): Promise<APIUser>
+}
+
+const schema = new mongoose.Schema<IUser, Model<IUser>, IUserMethods>({
   name: {
     type: 'string',
     required: true,
@@ -38,5 +52,21 @@ const schema = new mongoose.Schema<IUser>({
     required: true,
   },
 })
+
+schema.methods.toAPIUser = async function () {
+  const self = this as unknown as IUser & mongoose.Document
+
+  if (self.class instanceof mongoose.Types.ObjectId) {
+    await User.populate([self], 'class')
+  }
+
+  return {
+    id: self._id.toString(),
+    class: (self.class as unknown as IClassMethods).toAPIClass(),
+    classNum: self.classNum,
+    email: self.email,
+    name: self.name,
+  }
+}
 
 export const User = mongoose.model<IUser>('User', schema, 'users')

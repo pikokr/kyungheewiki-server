@@ -6,7 +6,17 @@ export interface IClass {
   classCode: string
 }
 
-const schema = new mongoose.Schema<IClass>({
+export interface IClassMethods {
+  toAPIClass(): APIClass
+}
+
+export interface APIClass {
+  id: string
+  grade: number
+  classNum: number
+}
+
+const schema = new mongoose.Schema<IClass, mongoose.Model<IClass>, IClassMethods>({
   classCode: {
     type: 'string',
     unique: true,
@@ -21,5 +31,15 @@ const schema = new mongoose.Schema<IClass>({
     required: true,
   },
 })
+
+schema.methods.toAPIClass = function () {
+  const self = this as unknown as IClass & mongoose.Document
+
+  return {
+    id: self._id.toString(),
+    classNum: self.classNum,
+    grade: self.grade,
+  }
+}
 
 export const Class = mongoose.model<IClass>('Class', schema, 'classes')
