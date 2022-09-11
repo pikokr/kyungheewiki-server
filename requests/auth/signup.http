@@ -1,4 +1,10 @@
-POST http://localhost:1234/api/auth/login
+POST http://localhost:1234/api/auth/signup
 Content-Type: application/json
 
-{"email": "test@example.com", "password": "test"}
+{
+  "email": "test@example.com",
+  "password": "testasdf",
+  "name": "???",
+  "classCode": "852036",
+  "classNum": 1
+}

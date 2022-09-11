@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose, { trusted } from 'mongoose'
 
 export interface IUser {
   name: string // 이름
@@ -22,6 +22,19 @@ const schema = new mongoose.Schema<IUser>({
   class: {
     type: 'ObjectId',
     ref: 'Class',
+    required: true,
+  },
+  classNum: {
+    type: 'number',
+    required: true,
+  },
+  email: {
+    type: 'string',
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: 'string',
     required: true,
   },
 })

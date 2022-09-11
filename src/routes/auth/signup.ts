@@ -1,31 +1,32 @@
 import bcrypt from 'bcrypt'
 import type { cryptoRandomStringAsync as cryptoRandomStringAsyncFn } from 'crypto-random-string'
 import { RouteHandler } from 'fastify'
-import { Session, User } from '~/models'
+import { Class, Session, User } from '~/models'
 
-import { loginSchema } from './validation'
+import { signUpSchema } from './validation'
 
-export const login: RouteHandler = async (req, reply) => {
+export const signUp: RouteHandler = async (req, reply) => {
   const cryptoRandomStringAsync: typeof cryptoRandomStringAsyncFn = (
     await eval('import("crypto-random-string")')
   ).cryptoRandomStringAsync
 
-  const body = await loginSchema.parseAsync(req.body)
+  const body = await signUpSchema.parseAsync(req.body)
 
-  const user = await User.findOne({
-    email: body.email,
-  })
+  const clazz = await Class.findOne({ classCode: body.classCode })
 
-  const sendAuthError = () =>
-    reply.status(401).send({
-      message: '이메일 또는 비밀번호가 잘못 되었습니다',
-    })
+  if (!clazz) return reply.status(400).send({ message: '반을 찾을 수 없습니다' })
 
-  if (!user) return sendAuthError()
+  const salt = await bcrypt.genSalt()
 
-  if (!(await bcrypt.compare(body.password, user.password))) {
-    return sendAuthError()
-  }
+  let user = new User()
+
+  user.name = body.name
+  user.email = body.email
+  user.password = await bcrypt.hash(body.password, salt)
+  user.class = clazz._id
+  user.classNum = body.classNum
+
+  user = await user.save()
 
   const accessToken = `${Buffer.from(`${Date.now()}`).toString(
     'base64'
