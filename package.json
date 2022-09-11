@@ -1,0 +1,27 @@
+{
+  "name": "kyungheewiki-server",
+  "packageManager": "yarn@3.2.3",
+  "devDependencies": {
+    "@swc-node/register": "^1.5.1",
+    "@swc/core": "^1.3.0",
+    "@trivago/prettier-plugin-sort-imports": "^3.3.0",
+    "@types/node": "^18.7.16",
+    "prettier": "^2.7.1",
+    "tsconfig-to-swcconfig": "^2.0.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.3"
+  },
+  "scripts": {
+    "dev": "node -r @swc-node/register src",
+    "confgen": "node swcconfig.js",
+    "build": "swc src -d dist",
+    "prod": "node dist"
+  },
+  "dependencies": {
+    "@swc/cli": "^0.1.57",
+    "chalk": "4",
+    "dotenv": "^16.0.2",
+    "fastify": "^4.5.3",
+    "tslog": "^3.3.4"
+  }
+}
