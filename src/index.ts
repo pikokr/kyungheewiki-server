@@ -1,3 +1,4 @@
+import cors from '@fastify/cors'
 import chalk from 'chalk'
 import 'dotenv/config'
 import fastify from 'fastify'
@@ -16,6 +17,8 @@ process.on('uncaughtException', (err) => {
 })
 
 const server = fastify()
+
+server.register(cors)
 
 server.register(routes, { prefix: '/api' })
 
