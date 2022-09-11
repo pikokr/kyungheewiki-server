@@ -22,6 +22,7 @@ const schema = new mongoose.Schema<IUser>({
   class: {
     type: 'ObjectId',
     ref: 'Class',
+    required: true,
   },
 })
 

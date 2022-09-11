@@ -17,7 +17,7 @@ process.on('uncaughtException', (err) => {
 
 const server = fastify()
 
-server.register(routes)
+server.register(routes, { prefix: '/api' })
 
 setImmediate(async () => {
   await mongoose.connect(process.env.DB_DSN!)
