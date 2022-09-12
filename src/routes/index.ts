@@ -10,7 +10,7 @@ export const routes: FastifyPluginAsync = async (server) => {
   server.setErrorHandler((err, _req, reply) => {
     if (err instanceof ZodError)
       return reply.status(400).send({
-        type: 'validationError',
+        code: ErrorCode.ValidationError,
         issues: err.issues,
       })
 
