@@ -6,7 +6,7 @@ import { UnauthorizedError, getUser } from '~/utils/users'
 import { authRoutes } from './auth'
 
 export const routes: FastifyPluginAsync = async (server) => {
-  server.setErrorHandler((err, req, reply) => {
+  server.setErrorHandler((err, _req, reply) => {
     if (err instanceof ZodError)
       return reply.status(400).send({
         type: 'validationError',
