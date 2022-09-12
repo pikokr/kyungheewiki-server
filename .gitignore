@@ -4,8 +4,7 @@
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-
-.pnp.*
+!.yarn/cache
 
 dist
 
