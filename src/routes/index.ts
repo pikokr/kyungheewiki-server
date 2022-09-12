@@ -1,6 +1,7 @@
 import type { FastifyPluginAsync } from 'fastify'
 import { ZodError } from 'zod'
 import { logger } from '~/logger'
+import { ErrorCode } from '~/utils/errors'
 import { UnauthorizedError, getUser } from '~/utils/users'
 
 import { authRoutes } from './auth'
@@ -15,14 +16,14 @@ export const routes: FastifyPluginAsync = async (server) => {
 
     if (err instanceof UnauthorizedError)
       return reply.status(401).send({
-        type: 'unauthorized',
+        code: ErrorCode.Unauthorized,
         message: 'Unauthorized',
       })
 
     logger.error(err)
 
     return reply.status(500).send({
-      type: 'internalServerError',
+      type: ErrorCode.InternalServerError,
       message: 'Internal Server Error',
     })
   })
