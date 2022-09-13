@@ -23,7 +23,7 @@ export const routes: FastifyPluginAsync = async (server) => {
     logger.error(err)
 
     return reply.status(500).send({
-      type: ErrorCode.InternalServerError,
+      code: ErrorCode.InternalServerError,
       message: 'Internal Server Error',
     })
   })

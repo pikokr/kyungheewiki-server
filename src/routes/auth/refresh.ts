@@ -1,42 +1,28 @@
-import bcrypt from 'bcrypt'
 import type { cryptoRandomStringAsync as cryptoRandomStringAsyncFn } from 'crypto-random-string'
 import { RouteHandler } from 'fastify'
-import { ZodError } from 'zod'
-import { Session, User } from '~/models'
+import { Session } from '~/models'
 import { ErrorCode } from '~/utils/errors'
 
-import { loginSchema } from './validation'
+import { refreshSessionSchema } from './validation'
 
-export const login: RouteHandler = async (req, reply) => {
+export const refreshSession: RouteHandler = async (req, reply) => {
   const cryptoRandomStringAsync: typeof cryptoRandomStringAsyncFn = (
     await eval('import("crypto-random-string")')
   ).cryptoRandomStringAsync
 
-  const body = await loginSchema.parseAsync(req.body)
+  const body = await refreshSessionSchema.parseAsync(req.body)
 
-  const user = await User.findOne({
-    email: body.email,
+  const session = await Session.findOne({
+    accessToken: body.accessToken,
+    refreshToken: body.refreshToken,
+    tokenExpiresAt: body.expiresAt,
   })
 
-  const sendAuthError = () => {
-    throw new ZodError([
-      {
-        path: ['email'],
-        message: '이메일 또는 비밀번호가 잘못 되었습니다',
-        code: 'custom',
-      },
-      {
-        path: ['password'],
-        message: '이메일 또는 비밀번호가 잘못 되었습니다',
-        code: 'custom',
-      },
-    ])
-  }
-
-  if (!user) return sendAuthError()
-
-  if (!(await bcrypt.compare(body.password, user.password))) {
-    return sendAuthError()
+  if (!session) {
+    return reply.status(404).send({
+      code: ErrorCode.NotFound,
+      message: 'Session not found.',
+    })
   }
 
   const accessToken = `${Buffer.from(`${Date.now()}`).toString(
@@ -49,15 +35,11 @@ export const login: RouteHandler = async (req, reply) => {
 
   const expiresAt = Date.now() + 1000 * 60 * 60 * 24 * 7
 
-  const session = new Session()
-
   session.accessToken = accessToken
 
   session.refreshToken = refreshToken
 
   session.tokenExpiresAt = new Date(expiresAt)
-
-  session.user = user._id
 
   await session.save()
 

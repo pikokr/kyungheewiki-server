@@ -6,6 +6,12 @@ export const loginSchema = z.object({
   password: z.string().min(1),
 })
 
+export const refreshSessionSchema = z.object({
+  accessToken: z.string(),
+  refreshToken: z.string(),
+  expiresAt: z.number(),
+})
+
 export const signUpSchema = z
   .object({
     name: z.string().min(2),
