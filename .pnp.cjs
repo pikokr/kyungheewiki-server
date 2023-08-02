@@ -50,7 +50,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["crypto-random-string", "npm:5.0.0"],\
             ["dotenv", "npm:16.0.2"],\
             ["fastify", "npm:4.5.3"],\
-            ["inquirer", "npm:8.2.4"],\
+            ["inquirer", "npm:8.2.6"],\
             ["lodash", "npm:4.17.21"],\
             ["mongoose", "npm:6.6.0"],\
             ["nodemon", "npm:2.0.19"],\
@@ -2118,10 +2118,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["inquirer", [\
-        ["npm:8.2.4", {\
-          "packageLocation": "./.yarn/cache/inquirer-npm-8.2.4-a2a5fb3187-dfcb6529d3.zip/node_modules/inquirer/",\
+        ["npm:8.2.6", {\
+          "packageLocation": "./.yarn/cache/inquirer-npm-8.2.6-dad82b499b-387ffb0a51.zip/node_modules/inquirer/",\
           "packageDependencies": [\
-            ["inquirer", "npm:8.2.4"],\
+            ["inquirer", "npm:8.2.6"],\
             ["ansi-escapes", "npm:4.3.2"],\
             ["chalk", "npm:4.1.2"],\
             ["cli-cursor", "npm:3.1.0"],\
@@ -2136,7 +2136,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["string-width", "npm:4.2.3"],\
             ["strip-ansi", "npm:6.0.1"],\
             ["through", "npm:2.3.8"],\
-            ["wrap-ansi", "npm:7.0.0"]\
+            ["wrap-ansi", "npm:6.2.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2336,7 +2336,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["crypto-random-string", "npm:5.0.0"],\
             ["dotenv", "npm:16.0.2"],\
             ["fastify", "npm:4.5.3"],\
-            ["inquirer", "npm:8.2.4"],\
+            ["inquirer", "npm:8.2.6"],\
             ["lodash", "npm:4.17.21"],\
             ["mongoose", "npm:6.6.0"],\
             ["nodemon", "npm:2.0.19"],\
@@ -3865,6 +3865,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["wrap-ansi", [\
+        ["npm:6.2.0", {\
+          "packageLocation": "./.yarn/cache/wrap-ansi-npm-6.2.0-439a7246d8-6cd96a4101.zip/node_modules/wrap-ansi/",\
+          "packageDependencies": [\
+            ["wrap-ansi", "npm:6.2.0"],\
+            ["ansi-styles", "npm:4.3.0"],\
+            ["string-width", "npm:4.2.3"],\
+            ["strip-ansi", "npm:6.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:7.0.0", {\
           "packageLocation": "./.yarn/cache/wrap-ansi-npm-7.0.0-ad6e1a0554-a790b846fd.zip/node_modules/wrap-ansi/",\
           "packageDependencies": [\
