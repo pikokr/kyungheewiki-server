@@ -38,7 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@swc/core", "npm:1.3.0"],\
             ["@trivago/prettier-plugin-sort-imports", "virtual:ae093d0fa91a73513f0a5d90de2714884a0d170a4c138bda66286b7165197577a87516d77d3622823c32526404ec6a25de8ce297e88a40862eb53ad7c318fb2e#npm:3.3.0"],\
             ["@types/bcrypt", "npm:5.0.0"],\
-            ["@types/inquirer", "npm:9.0.1"],\
+            ["@types/inquirer", "npm:9.0.7"],\
             ["@types/jsonwebtoken", "npm:8.5.9"],\
             ["@types/lodash", "npm:4.14.185"],\
             ["@types/node", "npm:18.7.16"],\
@@ -50,7 +50,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["crypto-random-string", "npm:5.0.0"],\
             ["dotenv", "npm:16.0.2"],\
             ["fastify", "npm:4.5.3"],\
-            ["inquirer", "npm:8.2.4"],\
+            ["inquirer", "npm:9.3.7"],\
             ["lodash", "npm:4.17.21"],\
             ["mongoose", "npm:6.6.0"],\
             ["nodemon", "npm:2.0.19"],\
@@ -443,6 +443,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@inquirer/figures", [\
+        ["npm:1.0.6", {\
+          "packageLocation": "./.yarn/cache/@inquirer-figures-npm-1.0.6-cc2c8949d4-dd5d53834d.zip/node_modules/@inquirer/figures/",\
+          "packageDependencies": [\
+            ["@inquirer/figures", "npm:1.0.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@jridgewell/gen-mapping", [\
         ["npm:0.1.1", {\
           "packageLocation": "./.yarn/cache/@jridgewell-gen-mapping-npm-0.1.1-3bad172ac6-3bcc21fe78.zip/node_modules/@jridgewell/gen-mapping/",\
@@ -813,10 +822,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/inquirer", [\
-        ["npm:9.0.1", {\
-          "packageLocation": "./.yarn/cache/@types-inquirer-npm-9.0.1-a03f526686-105c51f3ef.zip/node_modules/@types/inquirer/",\
+        ["npm:9.0.7", {\
+          "packageLocation": "./.yarn/cache/@types-inquirer-npm-9.0.7-49aba11c47-c14c7a5279.zip/node_modules/@types/inquirer/",\
           "packageDependencies": [\
-            ["@types/inquirer", "npm:9.0.1"],\
+            ["@types/inquirer", "npm:9.0.7"],\
             ["@types/through", "npm:0.0.30"],\
             ["rxjs", "npm:7.5.6"]\
           ],\
@@ -1346,10 +1355,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["cli-width", [\
-        ["npm:3.0.0", {\
-          "packageLocation": "./.yarn/cache/cli-width-npm-3.0.0-387b3f68f9-4c94af3769.zip/node_modules/cli-width/",\
+        ["npm:4.1.0", {\
+          "packageLocation": "./.yarn/cache/cli-width-npm-4.1.0-c08b53be83-0a79cff2db.zip/node_modules/cli-width/",\
           "packageDependencies": [\
-            ["cli-width", "npm:3.0.0"]\
+            ["cli-width", "npm:4.1.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1792,16 +1801,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["figures", [\
-        ["npm:3.2.0", {\
-          "packageLocation": "./.yarn/cache/figures-npm-3.2.0-85d357e955-85a6ad29e9.zip/node_modules/figures/",\
-          "packageDependencies": [\
-            ["figures", "npm:3.2.0"],\
-            ["escape-string-regexp", "npm:1.0.5"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["fill-range", [\
         ["npm:7.0.1", {\
           "packageLocation": "./.yarn/cache/fill-range-npm-7.0.1-b8b1817caa-cc283f4e65.zip/node_modules/fill-range/",\
@@ -2118,25 +2117,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["inquirer", [\
-        ["npm:8.2.4", {\
-          "packageLocation": "./.yarn/cache/inquirer-npm-8.2.4-a2a5fb3187-dfcb6529d3.zip/node_modules/inquirer/",\
+        ["npm:9.3.7", {\
+          "packageLocation": "./.yarn/cache/inquirer-npm-9.3.7-538e153aab-4d6e2f51b8.zip/node_modules/inquirer/",\
           "packageDependencies": [\
-            ["inquirer", "npm:8.2.4"],\
+            ["inquirer", "npm:9.3.7"],\
+            ["@inquirer/figures", "npm:1.0.6"],\
             ["ansi-escapes", "npm:4.3.2"],\
-            ["chalk", "npm:4.1.2"],\
-            ["cli-cursor", "npm:3.1.0"],\
-            ["cli-width", "npm:3.0.0"],\
+            ["cli-width", "npm:4.1.0"],\
             ["external-editor", "npm:3.1.0"],\
-            ["figures", "npm:3.2.0"],\
-            ["lodash", "npm:4.17.21"],\
-            ["mute-stream", "npm:0.0.8"],\
+            ["mute-stream", "npm:1.0.0"],\
             ["ora", "npm:5.4.1"],\
-            ["run-async", "npm:2.4.1"],\
-            ["rxjs", "npm:7.5.6"],\
+            ["run-async", "npm:3.0.0"],\
+            ["rxjs", "npm:7.8.1"],\
             ["string-width", "npm:4.2.3"],\
             ["strip-ansi", "npm:6.0.1"],\
-            ["through", "npm:2.3.8"],\
-            ["wrap-ansi", "npm:7.0.0"]\
+            ["wrap-ansi", "npm:6.2.0"],\
+            ["yoctocolors-cjs", "npm:2.1.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2324,7 +2320,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@swc/core", "npm:1.3.0"],\
             ["@trivago/prettier-plugin-sort-imports", "virtual:ae093d0fa91a73513f0a5d90de2714884a0d170a4c138bda66286b7165197577a87516d77d3622823c32526404ec6a25de8ce297e88a40862eb53ad7c318fb2e#npm:3.3.0"],\
             ["@types/bcrypt", "npm:5.0.0"],\
-            ["@types/inquirer", "npm:9.0.1"],\
+            ["@types/inquirer", "npm:9.0.7"],\
             ["@types/jsonwebtoken", "npm:8.5.9"],\
             ["@types/lodash", "npm:4.14.185"],\
             ["@types/node", "npm:18.7.16"],\
@@ -2336,7 +2332,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["crypto-random-string", "npm:5.0.0"],\
             ["dotenv", "npm:16.0.2"],\
             ["fastify", "npm:4.5.3"],\
-            ["inquirer", "npm:8.2.4"],\
+            ["inquirer", "npm:9.3.7"],\
             ["lodash", "npm:4.17.21"],\
             ["mongoose", "npm:6.6.0"],\
             ["nodemon", "npm:2.0.19"],\
@@ -2671,10 +2667,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["mute-stream", [\
-        ["npm:0.0.8", {\
-          "packageLocation": "./.yarn/cache/mute-stream-npm-0.0.8-489a7d6c2b-ff48d251fc.zip/node_modules/mute-stream/",\
+        ["npm:1.0.0", {\
+          "packageLocation": "./.yarn/cache/mute-stream-npm-1.0.0-b6e846d471-36fc968b0e.zip/node_modules/mute-stream/",\
           "packageDependencies": [\
-            ["mute-stream", "npm:0.0.8"]\
+            ["mute-stream", "npm:1.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3183,10 +3179,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["run-async", [\
-        ["npm:2.4.1", {\
-          "packageLocation": "./.yarn/cache/run-async-npm-2.4.1-a94bb90861-a2c88aa15d.zip/node_modules/run-async/",\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/run-async-npm-3.0.0-bfba9a6e47-280c03d5a8.zip/node_modules/run-async/",\
           "packageDependencies": [\
-            ["run-async", "npm:2.4.1"]\
+            ["run-async", "npm:3.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3206,6 +3202,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/rxjs-npm-7.5.6-8372315abc-fc05f01364.zip/node_modules/rxjs/",\
           "packageDependencies": [\
             ["rxjs", "npm:7.5.6"],\
+            ["tslib", "npm:2.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:7.8.1", {\
+          "packageLocation": "./.yarn/cache/rxjs-npm-7.8.1-41c443a75b-de4b53db10.zip/node_modules/rxjs/",\
+          "packageDependencies": [\
+            ["rxjs", "npm:7.8.1"],\
             ["tslib", "npm:2.4.0"]\
           ],\
           "linkType": "HARD"\
@@ -3575,15 +3579,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["through", [\
-        ["npm:2.3.8", {\
-          "packageLocation": "./.yarn/cache/through-npm-2.3.8-df5f72a16e-a38c3e0598.zip/node_modules/through/",\
-          "packageDependencies": [\
-            ["through", "npm:2.3.8"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["tiny-lru", [\
         ["npm:8.0.2", {\
           "packageLocation": "./.yarn/cache/tiny-lru-npm-8.0.2-b190e31fd1-ec4d884914.zip/node_modules/tiny-lru/",\
@@ -3865,6 +3860,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["wrap-ansi", [\
+        ["npm:6.2.0", {\
+          "packageLocation": "./.yarn/cache/wrap-ansi-npm-6.2.0-439a7246d8-6cd96a4101.zip/node_modules/wrap-ansi/",\
+          "packageDependencies": [\
+            ["wrap-ansi", "npm:6.2.0"],\
+            ["ansi-styles", "npm:4.3.0"],\
+            ["string-width", "npm:4.2.3"],\
+            ["strip-ansi", "npm:6.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:7.0.0", {\
           "packageLocation": "./.yarn/cache/wrap-ansi-npm-7.0.0-ad6e1a0554-a790b846fd.zip/node_modules/wrap-ansi/",\
           "packageDependencies": [\
@@ -3924,6 +3929,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/yargs-parser-npm-21.1.1-8fdc003314-ed2d96a616.zip/node_modules/yargs-parser/",\
           "packageDependencies": [\
             ["yargs-parser", "npm:21.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["yoctocolors-cjs", [\
+        ["npm:2.1.2", {\
+          "packageLocation": "./.yarn/cache/yoctocolors-cjs-npm-2.1.2-52d47e1a9b-1c474d4b30.zip/node_modules/yoctocolors-cjs/",\
+          "packageDependencies": [\
+            ["yoctocolors-cjs", "npm:2.1.2"]\
           ],\
           "linkType": "HARD"\
         }]\
